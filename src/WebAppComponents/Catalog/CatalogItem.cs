@@ -4,6 +4,7 @@ public record CatalogItem(
     int Id,
     string Name,
     string Description,
+    string Gender,
     decimal Price,
     string PictureUrl,
     int CatalogBrandId,

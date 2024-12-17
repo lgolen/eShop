@@ -850,6 +850,9 @@
           "description": {
             "type": "string"
           },
+          "gender": {
+            "type": "string"
+          },
           "price": {
             "type": "number",
             "format": "double"
