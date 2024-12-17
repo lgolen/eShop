@@ -16,6 +16,16 @@
         await base.OnInitializedAsync();
     }
 
-    public static string Url(NavigationManager nav)
-        => $"user/login?returnUrl={Uri.EscapeDataString(nav.ToBaseRelativePath(nav.Uri))}";
+    public static string Url(NavigationManager nav) {
+		var relativePath = nav.ToBaseRelativePath(nav.Uri);
+
+		// Ensure leading slash for valid relative paths
+		if (!relativePath.StartsWith("/"))
+		{
+			relativePath = "/" + relativePath;
+		}
+
+		return $"user/login?returnUrl={Uri.EscapeDataString(relativePath)}";
+
+	}
 }
